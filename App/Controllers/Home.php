@@ -21,13 +21,12 @@ class Home extends \Core\Controller
     public function indexAction()
     {
         $path = getcwd();
-        $file = $path.'/file/test.docx';
-        var_dump($path);
+        $file = $path.'/file/dfff.docx';
         $converter = new OfficeConverter($file);
         $converter->convertTo('output-file.pdf'); //generates pdf file in same directory as test-file.docx
         $converter->convertTo('output-file.html'); //generates html file in same directory as test-file.docx
 
-        $converter = new OfficeConverter('test-file.docx', 'path-to-outdir');
+//        //$converter = new OfficeConverter('test-file.docx', 'path-to-outdir');
         View::renderTemplate('Home/index.html');
     }
 }
